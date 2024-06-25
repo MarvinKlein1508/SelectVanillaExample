@@ -1,0 +1,27 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<EditForm Model="Input">
+
+    <InputSelect @bind-Value="Input.MyValue" class="form-select">
+        <option value="Hello World 1" disabled>Hello World 1</option>
+        <option value="Hello World 2">Hello World 2</option>
+        <option value="Hello World 3">Hello World 3</option>
+        <option value="Hello World 4">Hello World 4</option>
+    </InputSelect>
+    <p>Selected: @Input.MyValue</p>
+
+</EditForm>
+
+@code {
+    public MyInput Input { get; set; } = new();
+    public class MyInput
+    {
+        public string MyValue { get; set; } = "Hello World 1";
+    }
+}
